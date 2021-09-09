@@ -2,27 +2,36 @@ html,
 body {
   height: 100%;
   width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .container {
+  overflow-x: hidden;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 95%;
-  width: auto;
+  height: 100%;
+  width: 100%;
   text-align: center;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  width: 20%;
+  flex-grow: 0;
   text-align: left;
-  height: 50%;
-  width: 18%;
-  padding: 2.5em 3em;
+  height: 60%;
   font-size: 15px;
   color: hsl(0, 0%, 95%);
   font-family: "Lexend Deca", sans-serif;
+}
+
+.card > * {
+  margin: 1em 1.25em;
 }
 
 .card img {
@@ -31,28 +40,28 @@ body {
 }
 
 .card h1 {
-  margin: 1.5em 0 0.5em;
   text-transform: uppercase;
+  justify-self: start;
   font-size: 2.5em;
   font-weight: 400;
+  margin: 0.5em;
   font-family: "Big Shoulders Display";
 }
 
 .card p {
   color: hsla(0, 0%, 100%, 0.75);
   font-weight: 700;
-  line-height: 2em;
+  line-height: 1.75em;
   margin-bottom: 4em;
 }
 
 .card button {
   margin-top: auto;
-  margin-bottom: 0.5em;
   border: none;
   border-radius: 30px;
   width: 50%;
-  padding: 1em;
-  font-size: 1.15em;
+  padding: 0.75em;
+  font-size: 1em;
 }
 
 .card-1 {
@@ -89,4 +98,72 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 880px) {
+  .card p {
+    line-height: 1.25em;
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 1em auto;
+  }
+
+  .card {
+    flex-wrap: nowrap;
+    flex: 1;
+    height: auto;
+    width: 60%;
+  }
+
+  .card > * {
+    margin: 0 1.5em;
+  }
+
+  .card img {
+    height: 3vh;
+    width: 5vh;
+    margin-top: 1.5em;
+  }
+
+  .card h1 {
+    font-size: 20px;
+    margin: 0.5em 1em;
+  }
+
+  .card p {
+    line-height: 1.1em;
+    font-size: 13px;
+  }
+
+  .card button {
+    font-size: 13px;
+    padding: 0.5em 0.6em;
+    margin-bottom: 10px;
+  }
+
+  .card-1 {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+
+  .card-3 {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 0;
+  }
+
+  .attribution {
+    top: 0;
+    width: 100%;
+  }
 }
